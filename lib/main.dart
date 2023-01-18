@@ -9,135 +9,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false, // debug 띠 없애기
-      title: 'BBANTO',
-      home: Grade(),
+    return MaterialApp(
+      title: 'Appbar',
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: MyPage(),
     );
   }
 }
 
-class Grade extends StatelessWidget {
-  const Grade({Key? key}) : super(key: key);
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-        title: const Text('BBANTO'),
-        backgroundColor: Colors.amber[700],
+        title: Text('Appbar icon menu'),
         centerTitle: true,
-        elevation: 0.0,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, // 시작점 정렬
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/IMG_2488.JPG'),
-                radius: 60.0,
-              ),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.grey[850],
-              thickness: 0.5, // 선의 두께
-              endIndent: 30.0, // 끝에서 얼마나 떨어져야 할지
-            ),
-            Text('NAME',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('BBANTO',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold // 글씨 굵기
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Text('BBANTO POWER LEVEL',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('14',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold // 글씨 굵기
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('using lightsaber',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('face hero tattoo',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('fire flames',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/IMG_2488.JPG'),
-                radius: 40.0,
-                backgroundColor: Colors.amber[800],
-              ),
-            )
-          ],
+        elevation: 0.0, // 입체감 제거
+        leading: IconButton( // 아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할 때
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('menu button is clicked');
+          },
         ),
+        actions: <Widget>[ // 복수의 아이콘 버튼등을 오른쪽에 배치 할때
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              print('Shopping button is clicked');
+            },
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              print('Search button is clicked');
+            },
+          ),
+        ],
       ),
     );
   }
