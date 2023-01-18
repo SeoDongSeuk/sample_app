@@ -5,62 +5,141 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false, // debug 띠 없애기
+      title: 'BBANTO',
+      home: Grade(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class Grade extends StatelessWidget {
+  const Grade({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('BBANTO'),
+        backgroundColor: Colors.amber[700],
+        centerTitle: true,
+        elevation: 0.0,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start, // 시작점 정렬
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/IMG_2488.JPG'),
+                radius: 60.0,
+              ),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Divider(
+              height: 60.0,
+              color: Colors.grey[850],
+              thickness: 0.5, // 선의 두께
+              endIndent: 30.0, // 끝에서 얼마나 떨어져야 할지
             ),
+            Text('NAME',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('BBANTO',
+              style: TextStyle(
+                color: Colors.white,
+                letterSpacing: 2.0,
+                fontSize: 28.0,
+                fontWeight: FontWeight.bold // 글씨 굵기
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Text('BBANTO POWER LEVEL',
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0
+              ),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Text('14',
+              style: TextStyle(
+                  color: Colors.white,
+                  letterSpacing: 2.0,
+                  fontSize: 28.0,
+                  fontWeight: FontWeight.bold // 글씨 굵기
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text('using lightsaber',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text('face hero tattoo',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: <Widget>[
+                Icon(Icons.check_circle_outline),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text('fire flames',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    letterSpacing: 1.0,
+                  ),
+                ),
+              ],
+            ),
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/IMG_2488.JPG'),
+                radius: 40.0,
+                backgroundColor: Colors.amber[800],
+              ),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
+
