@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyPage(),
+      home: MyPage(), //테스트입니다.
     );
   }
 }
@@ -35,7 +35,8 @@ class MyPage extends StatelessWidget {
         //     print('menu button is clicked');
         //   },
         // ),
-        actions: <Widget>[ // 복수의 아이콘 버튼등을 오른쪽에 배치 할때
+        actions: <Widget>[
+          // 복수의 아이콘 버튼등을 오른쪽에 배치 할때
           IconButton(
             icon: Icon(Icons.shopping_cart),
             onPressed: () {
@@ -50,7 +51,8 @@ class MyPage extends StatelessWidget {
           ),
         ],
       ),
-      drawer: Drawer( // Drawer menu
+      drawer: Drawer(
+        // Drawer menu
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -71,19 +73,20 @@ class MyPage extends StatelessWidget {
               ],
               accountName: Text('BBANTO'),
               accountEmail: Text('cast3613@naver.com'),
-              onDetailsPressed: (){
+              onDetailsPressed: () {
                 print('onDetail button clicked');
               },
-              decoration: BoxDecoration( // 하단부분 곡선 부분 추가
-                color: Colors.red[200],
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40.0),
-                  bottomRight: Radius.circular(40.0),
-                )
-              ),
+              decoration: BoxDecoration(
+                  // 하단부분 곡선 부분 추가
+                  color: Colors.red[200],
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(40.0),
+                    bottomRight: Radius.circular(40.0),
+                  )),
             ),
             ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(
+                Icons.home,
                 color: Colors.grey[850],
               ),
               title: Text('HOME'),
@@ -93,7 +96,8 @@ class MyPage extends StatelessWidget {
               trailing: Icon(Icons.add),
             ),
             ListTile(
-              leading: Icon(Icons.settings,
+              leading: Icon(
+                Icons.settings,
                 color: Colors.grey[850],
               ),
               title: Text('Setting'),
@@ -103,7 +107,8 @@ class MyPage extends StatelessWidget {
               trailing: Icon(Icons.add),
             ),
             ListTile(
-              leading: Icon(Icons.question_answer,
+              leading: Icon(
+                Icons.question_answer,
                 color: Colors.grey[850],
               ),
               title: Text('Q&A'),
@@ -118,4 +123,3 @@ class MyPage extends StatelessWidget {
     );
   }
 }
-
