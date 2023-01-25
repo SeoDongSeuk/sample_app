@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: MyPage(), //테스트입니다.
+      home: const MyPage(), //테스트입니다.
     );
   }
 }
@@ -26,7 +26,7 @@ class MyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Appbar icon menu'),
+        title: const Text('Appbar icon menu'),
         centerTitle: true,
         elevation: 0.0, // 입체감 제거
         // leading: IconButton( // 아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할 때
@@ -38,13 +38,13 @@ class MyPage extends StatelessWidget {
         actions: <Widget>[
           // 복수의 아이콘 버튼등을 오른쪽에 배치 할때
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {
               print('Shopping button is clicked');
             },
           ),
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {
               print('Search button is clicked');
             },
@@ -57,11 +57,11 @@ class MyPage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(
+              currentAccountPicture: const CircleAvatar(
                 backgroundImage: AssetImage('assets/IMG_2488.JPG'),
                 backgroundColor: Colors.white,
               ),
-              otherAccountsPictures: <Widget>[
+              otherAccountsPictures: const <Widget>[
                 CircleAvatar(
                   backgroundImage: AssetImage('assets/IMG_2488.JPG'),
                   backgroundColor: Colors.white,
@@ -71,15 +71,15 @@ class MyPage extends StatelessWidget {
                   backgroundColor: Colors.white,
                 ),
               ],
-              accountName: Text('BBANTO'),
-              accountEmail: Text('cast3613@naver.com'),
+              accountName: const Text('BBANTO'),
+              accountEmail: const Text('cast3613@naver.com'),
               onDetailsPressed: () {
-                print('onDetail button clicked');
+                debugPrint('onDetail button clicked');
               },
               decoration: BoxDecoration(
                   // 하단부분 곡선 부분 추가
                   color: Colors.red[200],
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(40.0),
                     bottomRight: Radius.circular(40.0),
                   )),
@@ -89,33 +89,33 @@ class MyPage extends StatelessWidget {
                 Icons.home,
                 color: Colors.grey[850],
               ),
-              title: Text('HOME'),
+              title: const Text('HOME'),
               onTap: () {
-                print('Home is clicked');
+                debugPrint('Home is clicked');
               },
-              trailing: Icon(Icons.add),
+              trailing: const Icon(Icons.add),
             ),
             ListTile(
               leading: Icon(
                 Icons.settings,
                 color: Colors.grey[850],
               ),
-              title: Text('Setting'),
+              title: const Text('Setting'),
               onTap: () {
-                print('Setting is clicked');
+                debugPrint('Setting is clicked');
               },
-              trailing: Icon(Icons.add),
+              trailing: const Icon(Icons.add),
             ),
             ListTile(
               leading: Icon(
                 Icons.question_answer,
                 color: Colors.grey[850],
               ),
-              title: Text('Q&A'),
+              title: const Text('Q&A'),
               onTap: () {
-                print('Q&A is clicked');
+                debugPrint('Q&A is clicked');
               },
-              trailing: Icon(Icons.add),
+              trailing: const Icon(Icons.add),
             ),
           ],
         ),
