@@ -40,13 +40,13 @@ class MyPage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
-              print('Shopping button is clicked');
+              debugPrint('Shopping button is clicked');
             },
           ),
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              print('Search button is clicked');
+              debugPrint('Search button is clicked');
             },
           ),
         ],
