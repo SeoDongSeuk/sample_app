@@ -13,7 +13,7 @@ class MyPage extends StatelessWidget {
         elevation: 0.0, // 입체감 제거
         actions: <Widget>[
           // 복수의 아이콘 버튼등을 오른쪽에 배치 할때
-          const Button(),
+          const Button(), // 버튼 모듈을 하고 싶다.
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
